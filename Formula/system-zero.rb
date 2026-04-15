@@ -9,7 +9,7 @@ class SystemZero < Formula
   def install
     (bin/"sz").write <<~EOS
       #!/usr/bin/env bash
-      exec "#{Formula["pipx"].opt_bin}/pipx" run --spec sz-cli==0.1.0 sz "$@"
+      exec "#{Formula["pipx"].opt_bin}/pipx" run --spec git+https://github.com/avibrahms/system-zero@v0.1.0 sz "$@"
     EOS
   end
 
