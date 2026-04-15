@@ -7,7 +7,7 @@ class SystemZero < Formula
   depends_on "python@3.12"
 
   def install
-    system Formula["python@3.12"].opt_bin/"python3", "-m", "venv", libexec
+    system Formula["python@3.12"].opt_libexec/"bin/python3", "-m", "venv", libexec
     system libexec/"bin/python3", "-m", "pip", "install", "--upgrade", "pip"
     system libexec/"bin/python3", "-m", "pip", "install", "system-zero==0.1.0"
     bin.install_symlink libexec/"bin/sz"
